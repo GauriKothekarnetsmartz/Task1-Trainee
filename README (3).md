@@ -122,14 +122,39 @@ and run
   
 ```
 # it will list down the flag
-1. --------"-w: Watch the dashboard"----------
-2.--------"-es: error search"--------
-3.--------"-d: Get logs from a certain number of days ago"--------
-4.--------"-es: Search for specific errors"--------
-5.---------"-per: Analyze percentage of lines of code"-------
+1. Watch the dashboard
+   run
+   ```bash
+   
+   ./dashboard -w
+  
+```
+2.for error search
+```bash
+   
+   ./dashboard -es
+  
+```
+3.Get logs from a certain number of days ago
+```bash
+   
+   ./dashboard -d
+  
+```
+4.Search for specific errors
+```bash
+   
+   ./dashboard -es
+  
+```
+5.per: Analyze percentage of lines of code
 
 
-    
+   ```bash
+   
+   ./dashboard -per
+  
+``` 
 ## Support
 
 For support, email gauri.kothekar@netsmartz.com .
