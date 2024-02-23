@@ -23,8 +23,6 @@ https://github.com/GauriKothekarnetsmartz/Task1-Trainee.git
 
 ## Installation
 
-Download folder Assignemt1Gauri
-
 or
 
 ```bash
