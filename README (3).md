@@ -22,6 +22,7 @@ https://github.com/GauriKothekarnetsmartz/Task1-Trainee.git
 
 
 ## Installation
+you can directly clone the repository 
 
 or
 
