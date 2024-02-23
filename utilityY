@@ -1,0 +1,51 @@
+#!/bin/bash
+
+
+display_dashboard(){
+echo """""""""""""""""Welcome to the Dashboard!"""""""""""""""""""""
+    echo ----------------"Available options:"-------------------
+     echo --------"-logc: transfer the logs"----------
+echo "--------------------------------------------------------------------"
+#function to count errors and search for it
+
+}
+
+
+#function to generate the logs
+generate_logs(){
+while true; do
+./autogeneratecopy.sh
+sleep 1
+ echo "Do you want to exit? (y/n)"
+        read -r answer
+        case $answer in
+            [Yy]* ) echo "Exiting .."
+                    break;;
+            [Nn]* ) continue;;
+            * ) echo "Please answer yes or no.";;
+        esac
+done
+}
+
+
+
+
+# Check if any arguments are provided
+if [ $# -eq 0 ]; then
+    # No arguments provided, display the dashboard
+    echo "kindly provide the flag from below list"
+    display_dashboard
+    
+    
+    
+elif [ $# -eq 1 ] && [ "$1" == "-logc" ]; then
+    # Argument "-lg" provided, watch the dashboard
+    generate_logs
+
+
+  
+else
+    # Invalid argument
+    echo "Invalid argument. Usage: dashboard"
+    exit 1
+fi

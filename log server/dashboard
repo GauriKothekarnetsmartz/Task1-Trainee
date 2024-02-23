@@ -1,0 +1,134 @@
+#!/bin/bash
+
+
+display_dashboard(){
+echo """""""""""""""""Welcome to the Dashboard!"""""""""""""""""""""
+    echo ----------------"Available options:"-------------------
+    echo --------"-w: Watch the dashboard"----------
+    echo --------"-es: error search"--------
+    echo --------"-d: Get logs from a certain number of days ago"--------
+    echo --------"-es: Search for specific errors"--------
+    echo ---------"-per: Analyze percentage of lines of code"-------
+}
+
+
+echo "--------------------------------------------------------------------"
+#function to count errors and search for it
+
+
+
+
+#function to get the data of days ago
+ago_days(){
+"search the logs of how many days before"
+while true; do
+./daysago.sh
+sleep 1
+ echo "Do you want to exit? (y/n)"
+        read -r answer
+        case $answer in
+            [Yy]* ) echo "Exiting .."
+                    break;;
+            [Nn]* ) continue;;
+            * ) echo "Please answer yes or no.";;
+        esac
+done
+}
+
+
+
+# Function to watch the dashboard
+watch_dashboard() {
+    # Your watching logic goes here
+    echo "Watching dashboard..."
+    while true; do
+        # Update dashboard every 5 seconds (example)
+        # Replace this with your actual watching logic
+        ./watch.sh
+        sleep 5
+        
+    done
+}
+
+error_search(){
+    echo "search error"
+    while true; do
+        ./error_search.sh
+        sleep 1
+        echo "Do you want to exit? (y/n)"
+        read -r answer
+        case $answer in
+            [Yy]* ) echo "Exiting error search..."
+                    break;;
+            [Nn]* ) continue;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+}
+
+
+analyse_percent(){
+echo "analyse percent line of code" 
+while true ; do
+./dash.sh
+sleep 1
+ echo "Do you want to exit? (y/n)"
+        read -r answer
+        case $answer in
+            [Yy]* ) echo "Exiting"
+                    break;;
+            [Nn]* ) continue;;
+            * ) echo "Please answer yes or no.";;
+        esac
+done
+}
+timesearch(){
+echo "analyse percent line of code" 
+while true ; do
+./time_search.sh
+sleep 1
+ echo "Do you want to exit? (y/n)"
+        read -r answer
+        case $answer in
+            [Yy]* ) echo "Exiting"
+                    break;;
+            [Nn]* ) continue;;
+            * ) echo "Please answer yes or no.";;
+        esac
+done
+}
+
+
+
+# Main execution starts here
+
+# Check if any arguments are provided
+if [ $# -eq 0 ]; then
+    # No arguments provided, display the dashboard
+    echo "kindly provide the flag from below list"
+    display_dashboard
+    
+    
+    
+elif [ $# -eq 1 ] && [ "$1" == "-w" ]; then
+    # Argument "-w" provided, watch the dashboard
+    watch_dashboard
+elif [ $# -eq 1 ] && [ "$1" == "-e" ]; then
+	count_error
+	
+elif [ $# -eq 1 ] && [ "$1" == "-d" ]; then
+	ago_days
+elif [ $# -eq 1 ] && [ "$1" == "-es" ]; then
+	error_search
+elif [ $# -eq 1 ] && [ "$1" == "-per" ]; then
+	analyse_percent
+elif [ $# -eq 1 ] && [ "$1" == "-time" ]; then
+        timesearch
+	
+	
+    
+else
+    # Invalid argument
+    echo "Invalid argument. Usage: dashboard"
+    exit 1
+fi
