@@ -3,8 +3,11 @@
 
 display_dashboard(){
 echo """""""""""""""""Welcome to the Dashboard!"""""""""""""""""""""
-    echo ----------------"Available options:"-------------------
-     echo --------"-logc: transfer the logs"----------
+echo """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+echo " ----------------""Available options:""-----------------------"
+
+echo "--------""-logc": "log generate and transfer the logs""-----"
 echo "--------------------------------------------------------------------"
 #function to count errors and search for it
 
